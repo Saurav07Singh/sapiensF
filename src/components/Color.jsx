@@ -12,7 +12,7 @@ const Color = () => {
   useEffect(() => {
     const fetchColorPreference = async () => {
       try {
-        const response = await axios.get(`http://localhost:8001/api/color`, {
+        const response = await axios.get(`https://sapiensapi.onrender.com/api/color`, {
           withCredentials: true,
         });
 
@@ -28,7 +28,7 @@ const Color = () => {
   }, []);
   const handleLogout = async () => {
     try {
-      const resp = await axios.get(`http://localhost:8001/api/logout`, {
+      const resp = await axios.get(`https://sapiensapi.onrender.com/api/logout`, {
         withCredentials: true,
       });
       if ((resp.message = "success")) setisLoggedIn(false);
@@ -50,7 +50,7 @@ const Color = () => {
     );
     try {
       const resp = await axios.put(
-        `http://localhost:8001/api/color`,
+        `https://sapiensapi.onrender.com/api/color`,
         { selectedColor: selectedColor },
         { withCredentials: true }
       );
